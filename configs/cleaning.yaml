@@ -1,0 +1,17 @@
+input_dir: data/raw
+output_dir: data/interim
+report_dir: reports
+
+# Order = priority for duplicates (the first source keeps the sentence).
+sources: [doda, madar_rabat, atlasia_comments, atlasia_stories, atlasia_web_data]
+
+# Cleaning steps, applied in this order to the Darija text and to the translation.
+steps: [nfkc, invisible, html, urls_mentions, emojis, repeats, whitespace]
+
+filters:
+  min_chars: 2                  # shorter texts are rejected
+  max_words: 100                # longer texts are rejected
+  min_alnum_ratio: 0.5          # (letters + digits) / non-space characters; digits count (Arabizi)
+  reject_contact_info: true     # e-mails and phone-like numbers
+  identical_pair_min_words: 3   # darija == translation (copy) is rejected from this length
+  max_len_ratio: 4.0            # word-count ratio between darija and translation

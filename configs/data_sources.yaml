@@ -1,0 +1,77 @@
+# configs/data_sources.yaml
+raw_dir: data/raw
+
+sources:
+  doda:
+    type: doda
+    enabled: true
+    path: data/raw/doda/download/sentences.csv
+    format: csv
+    darija_col: darija
+    target_col: eng
+    target_lang: en
+    meta_cols: [darija_ar]
+    license: "CC BY-NC 4.0 (verifier)"
+
+  atlasia_comments:
+    type: social_media
+    enabled: true
+    url: https://huggingface.co/datasets/atlasia/darija_english/resolve/main/atlasia_comments.csv
+    format: csv
+    darija_col: darija
+    target_col: english
+    target_lang: en
+    meta_cols: [id, source]
+    license: "CC BY-NC 4.0"
+
+  atlasia_stories:
+    type: tabular
+    enabled: true
+    url: https://huggingface.co/datasets/atlasia/darija_english/resolve/main/atlasia_stories.csv
+    format: csv
+    darija_col: darija          # a verifier dans l'en-tete du fichier
+    target_col: english
+    target_lang: en
+    meta_cols: [id, source]
+    license: "CC BY-NC 4.0"
+
+  atlasia_web_data:
+    type: tabular
+    enabled: true
+    url: https://huggingface.co/datasets/atlasia/darija_english/resolve/main/atlasia_web_data.csv
+    format: csv
+    darija_col: darija          # a verifier dans l'en-tete du fichier
+    target_col: english
+    target_lang: en
+    meta_cols: [id, source]
+    license: "CC BY-NC 4.0"
+
+  madar:
+    type: madar
+    enabled: false              # en attente de l'acces
+    path: data/raw/madar/download/madar.tsv
+    format: tsv
+    header: false
+    columns: [id, dialect, text]
+    darija_col: text
+    filter: {column: dialect, values: [RAB, FES]}
+    license: "MADAR : recherche non commerciale"
+
+  subtitles:
+    type: subtitles
+    enabled: false
+    dir: data/raw/subtitles/darija
+    pair_dir: data/raw/subtitles/fr
+    target_lang: fr
+    tolerance: 1.0
+    license: "A VERIFIER"
+
+  madar_rabat:
+    type: madar
+    enabled: true
+    path: data/raw/madar/download/MADAR.corpus.Rabat.tsv
+    format: tsv
+    header: true
+    darija_col: sent
+    meta_cols: [sentID.BTEC, split, lang]
+    license: "MADAR : recherche non commerciale, ne pas redistribuer"

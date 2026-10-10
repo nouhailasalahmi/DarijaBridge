@@ -1,0 +1,89 @@
+{
+  "doda": {
+    "read": 48839,
+    "kept": 48698,
+    "with_target": 48677,
+    "rejected": {
+      "duplicate_in_source": 132,
+      "identical_pair": 1,
+      "length_ratio": 4,
+      "too_short": 2,
+      "bad_target": 2
+    },
+    "modified": {
+      "repeats": 117,
+      "whitespace": 536,
+      "nfkc": 5
+    }
+  },
+  "madar_rabat": {
+    "read": 12000,
+    "kept": 11922,
+    "with_target": 0,
+    "rejected": {
+      "duplicate_in_source": 78
+    },
+    "modified": {
+      "nfkc": 8,
+      "repeats": 20
+    }
+  },
+  "atlasia_comments": {
+    "read": 10000,
+    "kept": 9716,
+    "with_target": 9716,
+    "rejected": {
+      "too_short": 15,
+      "empty": 105,
+      "length_ratio": 26,
+      "bad_target": 31,
+      "duplicate_in_source": 84,
+      "identical_pair": 2,
+      "too_long": 10,
+      "no_letters": 7,
+      "mostly_non_text": 1,
+      "contact_info": 2,
+      "duplicate_other_source": 1
+    },
+    "modified": {
+      "nfkc": 8431,
+      "repeats": 797,
+      "emojis": 3983,
+      "whitespace": 4498,
+      "html": 527,
+      "invisible": 33,
+      "urls_mentions": 2
+    }
+  },
+  "atlasia_stories": {
+    "read": 3000,
+    "kept": 44,
+    "with_target": 44,
+    "rejected": {
+      "too_long": 2778,
+      "bad_target": 166,
+      "no_letters": 8,
+      "length_ratio": 2,
+      "mostly_non_text": 2
+    },
+    "modified": {
+      "repeats": 2549,
+      "whitespace": 46,
+      "nfkc": 1
+    }
+  },
+  "atlasia_web_data": {
+    "read": 3000,
+    "kept": 2942,
+    "with_target": 2942,
+    "rejected": {
+      "length_ratio": 10,
+      "duplicate_in_source": 47,
+      "bad_target": 1
+    },
+    "modified": {
+      "whitespace": 149,
+      "repeats": 4
+    }
+  }
+}

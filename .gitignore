@@ -1,0 +1,26 @@
+# Environnement
+.venv/
+venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Données : licences non commerciales, redistribution interdite (MADAR), fichiers volumineux
+data/*
+!data/README.md
+
+# Archives, et dossiers des parties à venir (modèles, suivi d'expériences)
+*.zip
+models/
+checkpoints/
+mlruns/
+wandb/
