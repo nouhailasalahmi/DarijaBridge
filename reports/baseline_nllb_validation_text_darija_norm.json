@@ -1,0 +1,86 @@
+{
+  "input_field": "text_darija_norm",
+  "per_source_limit": 100,
+  "skipped_without_input_or_reference": {},
+  "overall": {
+    "n": 300,
+    "bleu": 19.23681006136165,
+    "chrf": 42.06706792878059
+  },
+  "macro_average": {
+    "bleu": 15.398533456380083,
+    "chrf": 38.651650327803935
+  },
+  "by_source": {
+    "atlasia_comments": {
+      "n": 100,
+      "bleu": 17.39328287495738,
+      "chrf": 37.23874806218726,
+      "bleu_ci": [
+        14.457746423953873,
+        20.254070045009524
+      ],
+      "chrf_ci": [
+        33.966439218919106,
+        40.04856168878877
+      ]
+    },
+    "atlasia_web_data": {
+      "n": 100,
+      "bleu": 21.886386725974724,
+      "chrf": 47.77725820864549,
+      "bleu_ci": [
+        19.184402911189277,
+        25.065211235043627
+      ],
+      "chrf_ci": [
+        44.83487086369641,
+        50.63576959959107
+      ]
+    },
+    "doda": {
+      "n": 100,
+      "bleu": 6.915930768208148,
+      "chrf": 30.93894471257904,
+      "bleu_ci": [
+        2.5898818867033966,
+        10.492293301473037
+      ],
+      "chrf_ci": [
+        27.187349416575074,
+        34.52916239614239
+      ]
+    }
+  },
+  "signatures": {
+    "bleu": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+  },
+  "config": {
+    "split_dir": "data/splits/en",
+    "split": "validation",
+    "model": "facebook/nllb-200-distilled-600M",
+    "src_lang": "ary_Arab",
+    "tgt_lang": "eng_Latn",
+    "input_field": "text_darija_norm",
+    "per_source": 100,
+    "sources": [
+      "doda",
+      "atlasia_comments",
+      "atlasia_web_data"
+    ],
+    "num_beams": 4,
+    "max_length": 128,
+    "batch_size": 16,
+    "bootstrap": 200,
+    "output_dir": "data/baselines",
+    "report_dir": "reports"
+  },
+  "versions": {
+    "python": "3.14.7",
+    "torch": "2.14.1+cpu",
+    "transformers": "5.19.0",
+    "sacrebleu": "2.6.0"
+  },
+  "name": "nllb_validation_text_darija_norm"
+}

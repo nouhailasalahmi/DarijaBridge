@@ -1,0 +1,19 @@
+input_dir: data/interim
+output_dir: data/processed
+report_dir: reports
+lexicon_path: data/resources/arabizi_lexicon.json
+
+# Same order as cleaning.yaml
+sources: [doda, madar_rabat, atlasia_comments, atlasia_stories, atlasia_web_data]
+
+arabic_punct: true      # ? , ;  ->  Arabic punctuation when the output is in Arabic script
+unify_gaf: true         # unify gaf variants (check that your tokenizer knows the letter)
+reference_field: darija_ar   # meta field with a reference Arabic text (DODA); stored as text_darija_ar_ref
+
+# The lexicon is learned from the aligned DODA sentences (Arabizi <-> Arabic script).
+# About 1/test_mod of them are held out to measure the quality honestly.
+lexicon:
+  source: doda
+  gold_field: darija_ar
+  test_mod: 10
+  min_count: 1

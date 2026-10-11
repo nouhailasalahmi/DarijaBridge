@@ -8,5 +8,8 @@ version = "0.1.0"
 requires-python = ">=3.10"
 dependencies = ["pyyaml>=6.0", "requests>=2.31"]
 
+[project.optional-dependencies]
+baseline = ["sacrebleu>=2.4", "torch", "transformers>=4.40", "sentencepiece"]
+
 [tool.setuptools.packages.find]
 where = ["src"]

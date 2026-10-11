@@ -1,0 +1,58 @@
+{
+  "input_field": "text_darija",
+  "per_source_limit": 100,
+  "skipped_without_input_or_reference": {},
+  "overall": {
+    "n": 100,
+    "bleu": 0.4529162811978172,
+    "chrf": 9.872563540597529
+  },
+  "macro_average": {
+    "bleu": 0.4529162811978172,
+    "chrf": 9.872563540597529
+  },
+  "by_source": {
+    "doda": {
+      "n": 100,
+      "bleu": 0.4529162811978172,
+      "chrf": 9.872563540597529,
+      "bleu_ci": [
+        0.1964666367923873,
+        0.6218321443907093
+      ],
+      "chrf_ci": [
+        8.939444256719618,
+        10.812322251261678
+      ]
+    }
+  },
+  "signatures": {
+    "bleu": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+  },
+  "config": {
+    "split_dir": "data/splits/en",
+    "split": "validation",
+    "model": "facebook/nllb-200-distilled-600M",
+    "src_lang": "ary_Arab",
+    "tgt_lang": "eng_Latn",
+    "input_field": "text_darija",
+    "per_source": 100,
+    "sources": [
+      "doda"
+    ],
+    "num_beams": 4,
+    "max_length": 128,
+    "batch_size": 16,
+    "bootstrap": 200,
+    "output_dir": "data/baselines",
+    "report_dir": "reports"
+  },
+  "versions": {
+    "python": "3.14.7",
+    "torch": "2.14.1+cpu",
+    "transformers": "5.19.0",
+    "sacrebleu": "2.6.0"
+  },
+  "name": "val_raw_doda_100"
+}

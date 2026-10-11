@@ -1,0 +1,8 @@
+input_file: data/dedup/corpus.jsonl
+output_dir: data/splits
+report_dir: reports
+
+validation: 0.10
+test: 0.10
+# Changing the salt reshuffles EVERYTHING. Keep it fixed once you have reported results.
+salt: darijabridge-v1

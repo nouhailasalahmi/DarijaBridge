@@ -1,0 +1,7 @@
+input_dir: data/processed
+output_dir: data/dedup
+report_dir: reports
+
+# Order = priority: when a sentence is in several sources, the first one keeps it.
+# Put the sources you trust most first.
+sources: [doda, madar_rabat, atlasia_comments, atlasia_web_data, atlasia_stories]

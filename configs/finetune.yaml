@@ -1,0 +1,27 @@
+# Fine-tuning of NLLB on the train split. Meant to run on a Kaggle GPU (T4); see the Kaggle notes.
+model: facebook/nllb-200-distilled-600M
+src_lang: ary_Arab
+tgt_lang: eng_Latn
+
+train_file: data/splits/en/train.jsonl
+validation_file: data/splits/en/validation.jsonl
+input_field: text_darija_norm      # text_darija | text_darija_norm | text_darija_ar_ref (DODA only)
+output_dir: models/nllb600m_ft_norm
+
+max_length: 128
+batch_size: 8
+grad_accum_steps: 2                # effective batch size = 16
+epochs: 2
+learning_rate: 3.0e-5              # starting values: tune them on the validation split, not on the test
+warmup_ratio: 0.05
+weight_decay: 0.0
+optimizer: adamw                   # adamw | adafactor (adafactor uses less GPU memory)
+fp16: true
+max_grad_norm: 1.0
+
+log_every: 50                      # optimizer steps
+eval_every: 1000                   # validation loss every N optimizer steps
+eval_per_source: 700               # validation sentences per source used for the loss
+train_per_source_cap: null         # e.g. 20000 to limit DODA (null = use everything)
+max_steps: null                    # smoke test: set a small number, e.g. 20
+seed: 42

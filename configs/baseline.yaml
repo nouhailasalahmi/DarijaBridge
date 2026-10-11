@@ -1,0 +1,23 @@
+split_dir: data/splits/en
+split: test                  # test | validation (use validation while you tune, test for the final number)
+
+model: facebook/nllb-200-distilled-600M
+src_lang: ary_Arab           # Moroccan Arabic in NLLB (check the model card); Arabizi has no code of its own
+tgt_lang: eng_Latn
+
+# Which text is given to the model. This is the ablation:
+#   text_darija         cleaned Arabizi / Arabic as found in the source
+#   text_darija_norm    after the normalization pipeline (Arabic script)
+#   text_darija_ar_ref  reference Arabic provided by DODA (DODA only: other sources are skipped)
+input_field: text_darija_norm
+
+per_source: 300              # at most N sentences per source (null = all; slow on CPU)
+sources: [doda, atlasia_comments, atlasia_web_data]
+
+num_beams: 4
+max_length: 128
+batch_size: 16
+bootstrap: 200               # resamples for the confidence interval (0 = off)
+
+output_dir: data/baselines
+report_dir: reports

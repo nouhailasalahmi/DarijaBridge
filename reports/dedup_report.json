@@ -1,0 +1,47 @@
+{
+  "sources": {
+    "doda": {
+      "read": 48698,
+      "kept": 48086,
+      "rejected": {
+        "duplicate_in_source": 612
+      }
+    },
+    "madar_rabat": {
+      "read": 11922,
+      "kept": 11912,
+      "rejected": {
+        "duplicate_in_source": 10
+      }
+    },
+    "atlasia_comments": {
+      "read": 9716,
+      "kept": 9618,
+      "rejected": {
+        "duplicate_other_source": 15,
+        "duplicate_in_source": 83
+      }
+    },
+    "atlasia_web_data": {
+      "read": 2942,
+      "kept": 2937,
+      "rejected": {
+        "duplicate_in_source": 5
+      }
+    },
+    "atlasia_stories": {
+      "read": 44,
+      "kept": 44,
+      "rejected": {}
+    }
+  },
+  "kept": 72597,
+  "groups": 71706,
+  "groups_with_several_records": 771,
+  "largest_group": 6,
+  "shared_darija_between_sources": {
+    "doda / madar_rabat": 110,
+    "atlasia_comments / doda": 21,
+    "atlasia_comments / madar_rabat": 4
+  }
+}

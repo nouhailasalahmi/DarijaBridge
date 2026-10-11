@@ -1,0 +1,63 @@
+{
+  "input_field": "text_darija_ar_ref",
+  "per_source_limit": 100,
+  "skipped_without_input_or_reference": {
+    "atlasia_comments": 995,
+    "atlasia_web_data": 299
+  },
+  "overall": {
+    "n": 100,
+    "bleu": 7.009347775387627,
+    "chrf": 31.351602451409043
+  },
+  "macro_average": {
+    "bleu": 7.009347775387627,
+    "chrf": 31.351602451409043
+  },
+  "by_source": {
+    "doda": {
+      "n": 100,
+      "bleu": 7.009347775387627,
+      "chrf": 31.351602451409043,
+      "bleu_ci": [
+        2.857106920865842,
+        10.524240215742065
+      ],
+      "chrf_ci": [
+        27.537676483857137,
+        35.46293325687527
+      ]
+    }
+  },
+  "signatures": {
+    "bleu": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+  },
+  "config": {
+    "split_dir": "data/splits/en",
+    "split": "validation",
+    "model": "facebook/nllb-200-distilled-600M",
+    "src_lang": "ary_Arab",
+    "tgt_lang": "eng_Latn",
+    "input_field": "text_darija_ar_ref",
+    "per_source": 100,
+    "sources": [
+      "doda",
+      "atlasia_comments",
+      "atlasia_web_data"
+    ],
+    "num_beams": 4,
+    "max_length": 128,
+    "batch_size": 16,
+    "bootstrap": 200,
+    "output_dir": "data/baselines",
+    "report_dir": "reports"
+  },
+  "versions": {
+    "python": "3.14.7",
+    "torch": "2.14.1+cpu",
+    "transformers": "5.19.0",
+    "sacrebleu": "2.6.0"
+  },
+  "name": "nllb_validation_text_darija_ar_ref"
+}

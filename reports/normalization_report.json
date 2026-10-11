@@ -1,0 +1,76 @@
+{
+  "transliteration": {
+    "train_sentences": 43754,
+    "heldout_sentences": 4944,
+    "lexicon_size": 39867,
+    "rules_only": {
+      "sentences": 4570,
+      "words": 20132,
+      "word_accuracy": 0.6701271607391218,
+      "cer": 0.12217795484727756,
+      "sentence_exact": 0.21728665207877462,
+      "oov_rate": 1.0,
+      "oov_word_accuracy": 0.6701271607391218
+    },
+    "lexicon_plus_rules": {
+      "sentences": 4570,
+      "words": 20132,
+      "word_accuracy": 0.8343930061593483,
+      "cer": 0.060215279233941425,
+      "sentence_exact": 0.4798687089715536,
+      "oov_rate": 0.15467911782237234,
+      "oov_word_accuracy": 0.485228002569043
+    }
+  },
+  "sources": {
+    "doda": {
+      "records": 48698,
+      "scripts": {
+        "latin": 48698
+      },
+      "mean_unknown_ratio": 0.028,
+      "with_reference": 48698,
+      "reference_identical_to_prediction": 31776
+    },
+    "madar_rabat": {
+      "records": 11922,
+      "scripts": {
+        "arabic": 11922
+      },
+      "mean_unknown_ratio": null,
+      "with_reference": 0,
+      "reference_identical_to_prediction": 0
+    },
+    "atlasia_comments": {
+      "records": 9716,
+      "scripts": {
+        "arabic": 8227,
+        "latin": 1414,
+        "mixed": 72,
+        "none": 3
+      },
+      "mean_unknown_ratio": 0.455,
+      "with_reference": 0,
+      "reference_identical_to_prediction": 0
+    },
+    "atlasia_stories": {
+      "records": 44,
+      "scripts": {
+        "arabic": 44
+      },
+      "mean_unknown_ratio": null,
+      "with_reference": 0,
+      "reference_identical_to_prediction": 0
+    },
+    "atlasia_web_data": {
+      "records": 2942,
+      "scripts": {
+        "arabic": 2940,
+        "mixed": 2
+      },
+      "mean_unknown_ratio": 0.9,
+      "with_reference": 0,
+      "reference_identical_to_prediction": 0
+    }
+  }
+}

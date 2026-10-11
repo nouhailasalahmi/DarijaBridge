@@ -1,0 +1,86 @@
+{
+  "input_field": "text_darija_norm",
+  "per_source_limit": 300,
+  "skipped_without_input_or_reference": {},
+  "overall": {
+    "n": 895,
+    "bleu": 17.20527434034777,
+    "chrf": 40.24779752580161
+  },
+  "macro_average": {
+    "bleu": 14.505409255985384,
+    "chrf": 37.38903204096455
+  },
+  "by_source": {
+    "atlasia_comments": {
+      "n": 300,
+      "bleu": 15.152345830428617,
+      "chrf": 35.618664959416,
+      "bleu_ci": [
+        13.31593178561814,
+        16.769511010361118
+      ],
+      "chrf_ci": [
+        33.64819992605156,
+        37.593743007996565
+      ]
+    },
+    "atlasia_web_data": {
+      "n": 295,
+      "bleu": 19.990369813782415,
+      "chrf": 46.01703020188814,
+      "bleu_ci": [
+        18.499944867210164,
+        21.789097072322424
+      ],
+      "chrf_ci": [
+        44.2940323734482,
+        47.654506671772964
+      ]
+    },
+    "doda": {
+      "n": 300,
+      "bleu": 8.373512123745119,
+      "chrf": 30.53140096158951,
+      "bleu_ci": [
+        5.780679299782742,
+        10.787413424821239
+      ],
+      "chrf_ci": [
+        28.030581887577444,
+        32.79512864025829
+      ]
+    }
+  },
+  "signatures": {
+    "bleu": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+  },
+  "config": {
+    "split_dir": "data/splits/en",
+    "split": "test",
+    "model": "facebook/nllb-200-distilled-600M",
+    "src_lang": "ary_Arab",
+    "tgt_lang": "eng_Latn",
+    "input_field": "text_darija_norm",
+    "per_source": 300,
+    "sources": [
+      "doda",
+      "atlasia_comments",
+      "atlasia_web_data"
+    ],
+    "num_beams": 4,
+    "max_length": 128,
+    "batch_size": 16,
+    "bootstrap": 200,
+    "output_dir": "data/baselines",
+    "report_dir": "reports"
+  },
+  "versions": {
+    "python": "3.14.7",
+    "torch": "2.14.1+cpu",
+    "transformers": "5.19.0",
+    "sacrebleu": "2.6.0"
+  },
+  "name": "nllb_test_text_darija_norm"
+}

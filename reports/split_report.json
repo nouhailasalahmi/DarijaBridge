@@ -1,0 +1,63 @@
+{
+  "params": {
+    "validation": 0.1,
+    "test": 0.1,
+    "salt": "darijabridge-v1"
+  },
+  "tasks": {
+    "en": {
+      "train": {
+        "records": 48581,
+        "by_source": {
+          "doda": 38482,
+          "atlasia_comments": 7720,
+          "atlasia_web_data": 2343,
+          "atlasia_stories": 36
+        }
+      },
+      "validation": {
+        "records": 6056,
+        "by_source": {
+          "doda": 4758,
+          "atlasia_comments": 995,
+          "atlasia_web_data": 299,
+          "atlasia_stories": 4
+        }
+      },
+      "test": {
+        "records": 6029,
+        "by_source": {
+          "doda": 4827,
+          "atlasia_comments": 903,
+          "atlasia_web_data": 295,
+          "atlasia_stories": 4
+        }
+      },
+      "test_target_seen_in_train": 541
+    },
+    "none": {
+      "train": {
+        "records": 9470,
+        "by_source": {
+          "doda": 15,
+          "madar_rabat": 9455
+        }
+      },
+      "validation": {
+        "records": 1240,
+        "by_source": {
+          "madar_rabat": 1240
+        }
+      },
+      "test": {
+        "records": 1221,
+        "by_source": {
+          "doda": 4,
+          "madar_rabat": 1217
+        }
+      }
+    }
+  },
+  "groups": 71706,
+  "groups_in_several_splits": 0
+}

@@ -1,0 +1,86 @@
+{
+  "input_field": "text_darija_norm",
+  "per_source_limit": 300,
+  "skipped_without_input_or_reference": {},
+  "overall": {
+    "n": 895,
+    "bleu": 0.06133301332529647,
+    "chrf": 0.07630837150964918
+  },
+  "macro_average": {
+    "bleu": 0.09022958560503488,
+    "chrf": 0.0774574963072068
+  },
+  "by_source": {
+    "atlasia_comments": {
+      "n": 300,
+      "bleu": 0.09909448502995415,
+      "chrf": 0.10043915728037553,
+      "bleu_ci": [
+        0.040290265644278976,
+        0.15225769366599365
+      ],
+      "chrf_ci": [
+        0.05166058721952349,
+        0.16755224049941683
+      ]
+    },
+    "atlasia_web_data": {
+      "n": 295,
+      "bleu": 0.014436830378362896,
+      "chrf": 0.058558010732505245,
+      "bleu_ci": [
+        0.013320759593827584,
+        0.015508947655757863
+      ],
+      "chrf_ci": [
+        0.0429941616012608,
+        0.07476260791472038
+      ]
+    },
+    "doda": {
+      "n": 300,
+      "bleu": 0.1571574414067876,
+      "chrf": 0.07337532090873962,
+      "bleu_ci": [
+        0.04767010826476818,
+        0.3255517093462177
+      ],
+      "chrf_ci": [
+        0.022601253616200582,
+        0.14077956670726183
+      ]
+    }
+  },
+  "signatures": {
+    "bleu": "nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.6.0",
+    "chrf": "nrefs:1|case:mixed|eff:yes|nc:6|nw:0|space:no|version:2.6.0"
+  },
+  "config": {
+    "split_dir": "data/splits/en",
+    "split": "test",
+    "model": "facebook/nllb-200-distilled-600M",
+    "src_lang": "ary_Arab",
+    "tgt_lang": "eng_Latn",
+    "input_field": "text_darija_norm",
+    "per_source": 300,
+    "sources": [
+      "doda",
+      "atlasia_comments",
+      "atlasia_web_data"
+    ],
+    "num_beams": 4,
+    "max_length": 128,
+    "batch_size": 16,
+    "bootstrap": 200,
+    "output_dir": "data/baselines",
+    "report_dir": "reports"
+  },
+  "versions": {
+    "python": "3.14.7",
+    "torch": "2.14.1+cpu",
+    "transformers": "5.19.0",
+    "sacrebleu": "2.6.0"
+  },
+  "name": "dryrun_test_text_darija_norm"
+}
