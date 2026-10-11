@@ -37,6 +37,17 @@ def length_grouped_batches(lengths: list[int], batch_size: int, seed: int, chunk
     return batches
 
 
+def longest_first(batches: list[list[int]], items: list[tuple[list[int], list[int]]]) -> list[list[int]]:
+    """Moves the batch holding the longest sequence (input or label) to the front. If the GPU is going to
+    run out of memory it happens at the very first step, not after an hour of training."""
+    if not batches:
+        return batches
+    def size(batch):
+        return max(max(len(items[j][0]), len(items[j][1])) for j in batch)
+    k = max(range(len(batches)), key=lambda i: size(batches[i]))
+    return [batches[k]] + batches[:k] + batches[k + 1:]
+
+
 def collate(items: list[tuple[list[int], list[int]]], pad_id: int):
     """Pads inputs with `pad_id` and labels with -100 (ignored by the loss)."""
     import torch

@@ -9,8 +9,8 @@ input_field: text_darija_norm      # text_darija | text_darija_norm | text_darij
 output_dir: models/nllb600m_ft_norm
 
 max_length: 128
-batch_size: 8
-grad_accum_steps: 2                # effective batch size = 16
+batch_size: 4                      # the 256k-token vocabulary makes each batch memory-hungry (8 ran out on a T4)
+grad_accum_steps: 4                # effective batch size = 16
 epochs: 2
 learning_rate: 3.0e-5              # starting values: tune them on the validation split, not on the test
 warmup_ratio: 0.05

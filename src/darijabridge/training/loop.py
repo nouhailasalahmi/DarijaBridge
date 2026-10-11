@@ -4,7 +4,7 @@ import math
 import time
 from pathlib import Path
 
-from darijabridge.training.data import collate, length_grouped_batches
+from darijabridge.training.data import collate, length_grouped_batches, longest_first
 from darijabridge.utils.logging import get_logger
 
 log = get_logger("train")
@@ -81,7 +81,9 @@ def train(model, tokenizer, train_items, val_items, cfg: dict, device: str, pad_
     running, seen = 0.0, 0
     done = False
     for epoch in range(cfg["epochs"]):
-        for i, idx in enumerate(length_grouped_batches(lengths, cfg["batch_size"], cfg.get("seed", 42) + epoch)):
+        batches = longest_first(length_grouped_batches(lengths, cfg["batch_size"], cfg.get("seed", 42) + epoch),
+                                train_items)
+        for i, idx in enumerate(batches):
             batch = {k: v.to(device) for k, v in collate([train_items[j] for j in idx], pad_id).items()}
             with torch.autocast(device_type=device, dtype=torch.float16, enabled=use_amp):
                 loss = model(**batch).loss / accum

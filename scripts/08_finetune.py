@@ -10,6 +10,7 @@ Then evaluate with the SAME script and test split as the baseline:
 """
 import argparse
 import json
+import os
 import platform
 from collections import Counter
 from pathlib import Path
@@ -21,6 +22,9 @@ from darijabridge.training.data import load_pairs, tokenize_pairs
 from darijabridge.training.loop import train
 from darijabridge.utils.io import read_jsonl
 from darijabridge.utils.logging import get_logger
+
+# Less memory fragmentation on the GPU (must be set before torch is imported)
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
 log = get_logger("finetune")
 
