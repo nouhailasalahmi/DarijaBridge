@@ -20,7 +20,7 @@ data/*
 
 # Archives, et dossiers des parties à venir (modèles, suivi d'expériences)
 *.zip
-models/
+/models/
 checkpoints/
 mlruns/
 wandb/
